@@ -38,18 +38,14 @@ $app->get('/alunni', function (Request $request, Response $response, $args) {
 
 $app->get('/alunni/{nome}', function (Request $request, Response $response, $args) {
    $classe  = new Classe();
-   $alunno = $classe->seatch($args['nome']);
+   $alunno = $classe->search($args["nome"]);
 
-
-
-
-   if($alunno){
+   if($alunno != null){
        $message = $alunno -> toString();
    }
    else{
        $message = "errore";
    }
-
 
    $response->getBody()->write($message);
    return $response;

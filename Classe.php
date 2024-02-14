@@ -11,7 +11,7 @@ class Classe{
         $A3 = new Alunno("Maverik" , "Iriarte" , 39);
         $A4 = new Alunno("Alessio" , "Pan" , 19);
 
-        $this->alunni = array($A1, $A2, $A3);
+        $this->alunni = array($A1, $A2, $A3, $A4);
    }
 
 
@@ -22,16 +22,18 @@ class Classe{
        }
        return $s;
    }
-   /*
-   public search(){
-       for($i=0; i<count($this->alunni); $i++){
-
+   
+   function search($nome){
+       for($i=0; $i<count($this->alunni); $i++){
+            if($this->alunni[$i]->get_nome() == $nome)
+                return $this->alunni[$i];
 
           
        }
+       return null;
    }
 
-*/
+
 
 
   
